@@ -211,6 +211,10 @@
     <Compile Include="Migrations\202403301200002_ImpactModels.Designer.cs">
       <DependentUpon>202403301200002_ImpactModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404010532265_UpdateProductCategory.cs" />
+    <Compile Include="Migrations\202404010532265_UpdateProductCategory.Designer.cs">
+      <DependentUpon>202404010532265_UpdateProductCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3247,6 +3251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403301200002_ImpactModels.resx">
       <DependentUpon>202403301200002_ImpactModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404010532265_UpdateProductCategory.resx">
+      <DependentUpon>202404010532265_UpdateProductCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
