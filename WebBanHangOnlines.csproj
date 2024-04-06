@@ -46,9 +46,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKFinder, Version=2.4.0.2631, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ckfinder\bin\Release\CKFinder.dll</HintPath>
+    <Reference Include="CKFinder">
+      <HintPath>..\..\..\Desktop\ckfinder\ckfinder\bin\Release\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
@@ -174,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -183,6 +183,8 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -208,6 +210,18 @@
     <Compile Include="Migrations\202403301200002_ImpactModels.cs" />
     <Compile Include="Migrations\202403301200002_ImpactModels.Designer.cs">
       <DependentUpon>202403301200002_ImpactModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404010532265_UpdateProductCategory.cs" />
+    <Compile Include="Migrations\202404010532265_UpdateProductCategory.Designer.cs">
+      <DependentUpon>202404010532265_UpdateProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404060807442_Update1206.cs" />
+    <Compile Include="Migrations\202404060807442_Update1206.Designer.cs">
+      <DependentUpon>202404060807442_Update1206.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404060825177_Update12061.cs" />
+    <Compile Include="Migrations\202404060825177_Update12061.Designer.cs">
+      <DependentUpon>202404060825177_Update12061.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3038,6 +3052,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\autoNumeric-1.9.45.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -3147,6 +3162,11 @@
     <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3158,6 +3178,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Uploads\images\Screenshot %281%29.png" />
+    <Content Include="Uploads\images\Screenshot 2024-03-29 184649.png" />
+    <Content Include="Uploads\_thumbs\Images\Screenshot %281%29.png" />
+    <Content Include="Uploads\_thumbs\Images\Screenshot 2024-03-29 184649.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3197,6 +3221,9 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Content\ckfinder\userfiles\" />
+    <Folder Include="Data\" />
+    <Folder Include="Uploads\files\" />
+    <Folder Include="Uploads\flash\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -3240,6 +3267,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403301200002_ImpactModels.resx">
       <DependentUpon>202403301200002_ImpactModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404010532265_UpdateProductCategory.resx">
+      <DependentUpon>202404010532265_UpdateProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404060807442_Update1206.resx">
+      <DependentUpon>202404060807442_Update1206.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404060825177_Update12061.resx">
+      <DependentUpon>202404060825177_Update12061.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
