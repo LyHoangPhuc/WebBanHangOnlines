@@ -136,7 +136,7 @@
                     var conf = confirm('Bạn có muốn xóa các bản ghi này hay không');
                     if (conf === true) {
                         $.ajax({
-                            url: '/admin/news/deleteAll',
+                            url: '/admin/ProductCategory/deleteAll',
                             type: 'POST',
                             data: { ids: str },
                             success: function (rs) {
@@ -166,7 +166,7 @@
                 var conf = confirm('Ban co muon xoa ban ghi nay khong?');
                 if (conf === true) {
                     $.ajax({
-                        url: '/admin/news/delete',
+                        url: '/admin/ProductCategory/delete',
                         type: 'POST',
                         data: { id: id },
                         success: function (rs) {
@@ -183,7 +183,7 @@
                 var btn = $(this);
                 var id = btn.data("id");
                 $.ajax({
-                    url: '/admin/news/IsActive',
+                    url: '/admin/ProductCategory/IsActive',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {

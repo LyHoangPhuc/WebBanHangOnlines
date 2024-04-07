@@ -88,10 +88,16 @@
                         foreach (var item in Model)
                         {
                             var strCheck = item.IsActive ? "<i class='fa fa-check text-success'></i>" : "<i class='fas fa-times text-danger'></i>";
+                            var strImg = "";
+                            var CheckImage = item.ProductImage.FirstOrDefault(x => x.IsDefault);
+                            if (CheckImage != null)
+                            {
+                                strImg = CheckImage.Image;
+                            }
                             <tr id="trow_@item.Id">
                                 <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
                                 <td>@i</td>
-                                <td><img class="imgproduct" data-id="@item.Id" src="@item.ProductImage.FirstOrDefault(x=>x.IsDefault).Image" width="50" /></td>
+                                <td><img class="imgproduct" data-id="@item.Id" src="@strImg" width="50" /></td>
                                 <td>@item.Title</td>
                                 <td>@item.ProductCategory.Title</td>
                                 <td>@item.Quantity</td>
