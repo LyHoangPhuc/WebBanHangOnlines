@@ -111,10 +111,10 @@
                                     <a href='#' data-id="@item.Id" class="btnHome">@Html.Raw(strCheckHome)</a>
                                 </td>
                                 <td class="text-center">
-                                    <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
+                                    <a href='#' data-id="@item.Id" class="btnSale">@Html.Raw(strCheckSale)</a>
                                 </td>
                                 <td class="text-center">
-                                    <a href='#' data-id="@item.Id" class="btnSale">@Html.Raw(strCheckSale)</a>
+                                    <a href='#' data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
                                 </td>
                                 <td>
                                     <a href="/admin/Products/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
@@ -307,6 +307,7 @@
                     }
                 });
             });
+            
         });
     </script>
 }
