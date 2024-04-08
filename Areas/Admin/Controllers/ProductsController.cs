@@ -72,10 +72,10 @@ namespace WebBanHangOnlines.Areas.Admin.Controllers
                 {
                     model.SeoTitle = model.Title;
                 }
-                    if (string.IsNullOrEmpty(model.Alias))
-                    {
-                        model.Alias = WebBanHangOnlines.Models.Common.Filter.FilterChar(model.Title);
-                    }
+                if (string.IsNullOrEmpty(model.Alias))
+                {
+                    model.Alias = WebBanHangOnlines.Models.Common.Filter.FilterChar(model.Title);
+                }
                 db.Products.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -111,6 +111,15 @@ namespace WebBanHangOnlines.Areas.Admin.Controllers
             var item = db.Products.Find(id);
             if (item != null)
             {
+                var checkImg = item.ProductImage.Where(x => x.ProductId == item.Id);
+                if (checkImg != null)
+                {
+                    foreach (var img in checkImg)
+                    {
+                        db.ProductImages.Remove(img);
+                        db.SaveChanges();
+                    }
+                }
                 db.Products.Remove(item);
                 db.SaveChanges();
                 return Json(new { success = true });
@@ -135,6 +144,48 @@ namespace WebBanHangOnlines.Areas.Admin.Controllers
                 }
                 return Json(new { success = true });
             }
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult IsActive(int id)
+        {
+            var item = db.Products.Find(id);
+            if (item != null)
+            {
+                item.IsActive = !item.IsActive;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, isAcive = item.IsActive });
+            }
+
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult IsSale(int id)
+        {
+            var item = db.Products.Find(id);
+            if (item != null)
+            {
+                item.IsSale = !item.IsSale;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsSale = item.IsSale });
+            }
+
+            return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult IsHome(int id)
+        {
+            var item = db.Products.Find(id);
+            if (item != null)
+            {
+                item.IsHome = !item.IsHome;
+                db.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { success = true, IsHome = item.IsHome });
+            }
+
             return Json(new { success = false });
         }
     }
