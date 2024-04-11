@@ -22,13 +22,13 @@ namespace WebBanHangOnlines
              name: "CheckOut",
              url: "thanh-toan",
              defaults: new { controller = "ShoppingCart", action = "CheckOut", alias = UrlParameter.Optional },
-             namespaces: new[] { "WebBanHangOnline.Controllers" }
+             namespaces: new[] { "WebBanHangOnlines.Controllers" }
             );
             routes.MapRoute(
              name: "ShoppingCart",
              url: "gio-hang",
              defaults: new { controller = "ShoppingCart", action = "Index", alias = UrlParameter.Optional },
-             namespaces: new[] { "WebBanHangOnline.Controllers" }
+             namespaces: new[] { "WebBanHangOnlines.Controllers" }
             );
             routes.MapRoute(
               name: "CategoryProduct",
@@ -40,7 +40,7 @@ namespace WebBanHangOnlines
               name: "detailProduct",
               url: "chi-tiet/{alias}-p{id}",
               defaults: new { controller = "Products", action = "Detail", alias = UrlParameter.Optional },
-              namespaces: new[] { "WebBanHangOnline.Controllers" }
+              namespaces: new[] { "WebBanHangOnlines.Controllers" }
             );
             routes.MapRoute(
                name: "Products",
