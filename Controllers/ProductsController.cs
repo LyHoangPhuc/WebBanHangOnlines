@@ -21,7 +21,7 @@ namespace WebBanHangOnlines.Controllers
         public ActionResult Detail(string alias, int id)
         {
             var item = db.Products.Find(id);
-            if (item != null)
+/*            if (item != null)
             {
                 db.Products.Attach(item);
                 item.ViewCount = item.ViewCount + 1;
@@ -30,7 +30,7 @@ namespace WebBanHangOnlines.Controllers
             }
             var countReview = db.Reviews.Where(x => x.ProductId == id).Count();
             ViewBag.CountReview = countReview;
-           return View(item);
+*/           return View(item);
         }
         public ActionResult ProductCategory(string alias, int id)
         {
