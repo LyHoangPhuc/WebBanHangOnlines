@@ -180,7 +180,7 @@ namespace WebBanHangOnlines.Controllers
             }
             return PartialView();
         }
-/*
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -196,8 +196,8 @@ namespace WebBanHangOnlines.Controllers
                     order.CustomerName = req.CustomerName;
                     order.Phone = req.Phone;
                     order.Address = req.Address;
-                    order.Email = req.Email;
-                    order.Status = 1;//chưa thanh toán / 2/đã thanh toán, 3/Hoàn thành, 4/hủy
+//                    order.Email = req.Email;
+//                    order.Status = 1;//chưa thanh toán / 2/đã thanh toán, 3/Hoàn thành, 4/hủy
                     cart.Items.ForEach(x => order.OrderDetails.Add(new OrderDetail
                     {
                         ProductId = x.ProductId,
@@ -209,15 +209,15 @@ namespace WebBanHangOnlines.Controllers
                     order.CreatedDate = DateTime.Now;
                     order.ModifiedDate = DateTime.Now;
                     order.CreatedBy = req.Phone;
-                    if (User.Identity.IsAuthenticated)
-                        order.CustomerId = User.Identity.GetUserId();
+//                    if (User.Identity.IsAuthenticated)
+//                        order.CustomerId = User.Identity.GetUserId();
                     Random rd = new Random();
                     order.Code = "DH" + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
                     //order.E = req.CustomerName;
                     db.Orders.Add(order);
                     db.SaveChanges();
                     //send mail cho khachs hang
-                    var strSanPham = "";
+/*                    var strSanPham = "";
                     var thanhtien = decimal.Zero;
                     var TongTien = decimal.Zero;
                     foreach (var sp in cart.Items)
@@ -225,7 +225,7 @@ namespace WebBanHangOnlines.Controllers
                         strSanPham += "<tr>";
                         strSanPham += "<td>" + sp.ProductName + "</td>";
                         strSanPham += "<td>" + sp.Quantity + "</td>";
-                        strSanPham += "<td>" + WebBanHangOnline.Common.Common.FormatNumber(sp.TotalPrice, 0) + "</td>";
+                        strSanPham += "<td>" + WebBanHangOnlines.Common.Common.FormatNumber(sp.TotalPrice, 0) + "</td>";
                         strSanPham += "</tr>";
                         thanhtien += sp.Price * sp.Quantity;
                     }
@@ -255,20 +255,21 @@ namespace WebBanHangOnlines.Controllers
                     WebBanHangOnlines.Common.Common.SendMail("ShopOnline", "Đơn hàng mới #" + order.Code, contentAdmin.ToString(), ConfigurationManager.AppSettings["EmailAdmin"]);
                     cart.ClearCart();
                     code = new { Success = true, Code = req.TypePayment, Url = "" };
-                    //var url = "";
-                    if (req.TypePayment == 2)
-                    {
-                        var url = UrlPayment(req.TypePaymentVN, order.Code);
-                        code = new { Success = true, Code = req.TypePayment, Url = url };
-                    }
+*/                    //var url = "";
+//                    if (req.TypePayment == 2)
+//                    {
+//                        var url = UrlPayment(req.TypePaymentVN, order.Code);
+//                        code = new { Success = true, Code = req.TypePayment, Url = url };
+//                    }
 
                     //code = new { Success = true, Code = 1, Url = url };
-                    //return RedirectToAction("CheckOutSuccess");
+                    cart.ClearCart();
+                    return RedirectToAction("CheckOutSuccess");
                 }
             }
             return Json(code);
         }
-*/
+
 
         [AllowAnonymous]
         [HttpPost]
