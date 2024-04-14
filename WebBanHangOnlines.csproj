@@ -272,6 +272,8 @@
     <Content Include="Content\assets\images\desc_1.jpg" />
     <Content Include="Content\assets\images\desc_2.jpg" />
     <Content Include="Content\assets\images\desc_3.jpg" />
+    <Content Include="Content\assets\images\GD3.png" />
+    <Content Include="Content\assets\images\Logo.png" />
     <Content Include="Content\assets\images\map_marker.png" />
     <Content Include="Content\assets\images\product_1.png" />
     <Content Include="Content\assets\images\product_10.png" />
