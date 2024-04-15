@@ -181,6 +181,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
@@ -235,6 +236,10 @@
     <Compile Include="Migrations\202404140450134_UpdatePayment.cs" />
     <Compile Include="Migrations\202404140450134_UpdatePayment.Designer.cs">
       <DependentUpon>202404140450134_UpdatePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404150726120_UpdateKey12.cs" />
+    <Compile Include="Migrations\202404150726120_UpdateKey12.Designer.cs">
+      <DependentUpon>202404150726120_UpdateKey12.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3285,6 +3290,9 @@
     <Content Include="Content\assets\plugins\themify-icons\fonts\themify.eot" />
     <Content Include="Content\assets\plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="Content\assets\plugins\themify-icons\fonts\themify.woff" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\View.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Partial_SanPham.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3417,6 +3425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404140450134_UpdatePayment.resx">
       <DependentUpon>202404140450134_UpdatePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404150726120_UpdateKey12.resx">
+      <DependentUpon>202404150726120_UpdateKey12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

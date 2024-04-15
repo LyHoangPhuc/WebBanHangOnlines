@@ -10,7 +10,7 @@ namespace WebBanHangOnlines.Common
 {
     public class Common
     {
-        private static string password = ConfigurationManager.AppSettings["PasswordEmail"];
+/*        private static string password = ConfigurationManager.AppSettings["PasswordEmail"];
         private static string Email = ConfigurationManager.AppSettings["Email"];
         public static bool SendMail(string name, string subject, string content,
             string toMail)
@@ -47,7 +47,7 @@ namespace WebBanHangOnlines.Common
                 rs = false;
             }
             return rs;
-        }
+        }    */
         public static string FormatNumber(object value, int SoSauDauPhay = 2)
         {
             bool isNumber = IsNumeric(value);
