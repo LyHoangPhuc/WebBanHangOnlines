@@ -14,10 +14,10 @@ namespace WebBanHangOnlines.Areas.Admin.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/News
-        public ActionResult Index(string Searchtext,int? page)
+        public ActionResult Index(string Searchtext, int? page)
         {
             var pageSize = 10;
-            if (page==null)
+            if (page == null)
             {
                 page = 1;
             }
@@ -42,7 +42,7 @@ namespace WebBanHangOnlines.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add(News model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 model.CreatedDate = DateTime.Now;
                 model.CategoryId = 15;
@@ -100,7 +100,7 @@ namespace WebBanHangOnlines.Areas.Admin.Controllers
                 item.IsActive = !item.IsActive;
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json(new { success = true , isAcive = item.IsActive });
+                return Json(new { success = true, isAcive = item.IsActive });
             }
 
             return Json(new { success = false });
@@ -109,12 +109,12 @@ namespace WebBanHangOnlines.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult DeleteAll(string ids)
         {
-            if(!string.IsNullOrEmpty(ids))
+            if (!string.IsNullOrEmpty(ids))
             {
                 var items = ids.Split(',');
-                if (items!=null && items.Any())
+                if (items != null && items.Any())
                 {
-                    foreach(var item in items)
+                    foreach (var item in items)
                     {
                         var obj = db.News.Find(Convert.ToInt32(item));
                         db.News.Remove(obj);
