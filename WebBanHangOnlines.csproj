@@ -250,6 +250,10 @@
     <Compile Include="Migrations\202404190715522_UpdateNews.Designer.cs">
       <DependentUpon>202404190715522_UpdateNews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404191709456_UpdateSubcribe.cs" />
+    <Compile Include="Migrations\202404191709456_UpdateSubcribe.Designer.cs">
+      <DependentUpon>202404191709456_UpdateSubcribe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3453,6 +3457,7 @@
     <Content Include="Views\News\Partial_News_Home.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\Home\Partial_Subcrice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3525,6 +3530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404190715522_UpdateNews.resx">
       <DependentUpon>202404190715522_UpdateNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404191709456_UpdateSubcribe.resx">
+      <DependentUpon>202404191709456_UpdateSubcribe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
