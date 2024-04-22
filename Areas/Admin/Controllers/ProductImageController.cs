@@ -9,6 +9,7 @@ using WebBanHangOnlines.Models.EF;
 
 namespace WebBanHangOnlines.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin,Employee")]
     public class ProductImageController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
