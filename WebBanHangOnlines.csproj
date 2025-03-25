@@ -46,9 +46,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKFinder, Version=2.4.0.2631, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ckfinder\bin\Release\CKFinder.dll</HintPath>
+    <Reference Include="CKFinder">
+      <HintPath>..\..\..\Desktop\ckfinder\ckfinder\bin\Release\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
@@ -179,13 +178,27 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingSystemController.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\SettingHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,10 +222,43 @@
     <Compile Include="Migrations\202403301200002_ImpactModels.Designer.cs">
       <DependentUpon>202403301200002_ImpactModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404010532265_UpdateProductCategory.cs" />
+    <Compile Include="Migrations\202404010532265_UpdateProductCategory.Designer.cs">
+      <DependentUpon>202404010532265_UpdateProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404060807442_Update1206.cs" />
+    <Compile Include="Migrations\202404060807442_Update1206.Designer.cs">
+      <DependentUpon>202404060807442_Update1206.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404060825177_Update12061.cs" />
+    <Compile Include="Migrations\202404060825177_Update12061.Designer.cs">
+      <DependentUpon>202404060825177_Update12061.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404100358493_Update12062.cs" />
+    <Compile Include="Migrations\202404100358493_Update12062.Designer.cs">
+      <DependentUpon>202404100358493_Update12062.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404140450134_UpdatePayment.cs" />
+    <Compile Include="Migrations\202404140450134_UpdatePayment.Designer.cs">
+      <DependentUpon>202404140450134_UpdatePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404150726120_UpdateKey12.cs" />
+    <Compile Include="Migrations\202404150726120_UpdateKey12.Designer.cs">
+      <DependentUpon>202404150726120_UpdateKey12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404190715522_UpdateNews.cs" />
+    <Compile Include="Migrations\202404190715522_UpdateNews.Designer.cs">
+      <DependentUpon>202404190715522_UpdateNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404191709456_UpdateSubcribe.cs" />
+    <Compile Include="Migrations\202404191709456_UpdateSubcribe.Designer.cs">
+      <DependentUpon>202404191709456_UpdateSubcribe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
     <Compile Include="Models\Common\Filter.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\EF\Adv.cs" />
     <Compile Include="Models\EF\Category.cs" />
     <Compile Include="Models\EF\Contact.cs" />
@@ -228,10 +274,76 @@
     <Compile Include="Models\EF\SystemSetting.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\SettingSystemViewModel.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\images\banner_1.jpg" />
+    <Content Include="Content\assets\images\banner_2.jpg" />
+    <Content Include="Content\assets\images\banner_3.jpg" />
+    <Content Include="Content\assets\images\blog_1.jpg" />
+    <Content Include="Content\assets\images\blog_2.jpg" />
+    <Content Include="Content\assets\images\blog_3.jpg" />
+    <Content Include="Content\assets\images\deal_ofthe_week.png" />
+    <Content Include="Content\assets\images\desc_1.jpg" />
+    <Content Include="Content\assets\images\desc_2.jpg" />
+    <Content Include="Content\assets\images\desc_3.jpg" />
+    <Content Include="Content\assets\images\GD3.png" />
+    <Content Include="Content\assets\images\Logo.png" />
+    <Content Include="Content\assets\images\map_marker.png" />
+    <Content Include="Content\assets\images\product_1.png" />
+    <Content Include="Content\assets\images\product_10.png" />
+    <Content Include="Content\assets\images\product_2.png" />
+    <Content Include="Content\assets\images\product_3.png" />
+    <Content Include="Content\assets\images\product_4.png" />
+    <Content Include="Content\assets\images\product_5.png" />
+    <Content Include="Content\assets\images\product_6.png" />
+    <Content Include="Content\assets\images\product_7.png" />
+    <Content Include="Content\assets\images\product_8.png" />
+    <Content Include="Content\assets\images\product_9.png" />
+    <Content Include="Content\assets\images\s-l960 %285%29.jpg" />
+    <Content Include="Content\assets\images\single_1.jpg" />
+    <Content Include="Content\assets\images\single_1_thumb.jpg" />
+    <Content Include="Content\assets\images\single_2.jpg" />
+    <Content Include="Content\assets\images\single_2_thumb.jpg" />
+    <Content Include="Content\assets\images\single_3.jpg" />
+    <Content Include="Content\assets\images\single_3_thumb.jpg" />
+    <Content Include="Content\assets\images\slider_1.jpg" />
+    <Content Include="Content\assets\js\categories_custom.js" />
+    <Content Include="Content\assets\js\contact_custom.js" />
+    <Content Include="Content\assets\js\custom.js" />
+    <Content Include="Content\assets\js\jquery-3.2.1.min.js" />
+    <Content Include="Content\assets\js\single_custom.js" />
+    <Content Include="Content\assets\plugins\easing\easing.js" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\assets\plugins\Isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\assets\plugins\jquery-ui-1.12.1.custom\jquery-ui.css" />
+    <Content Include="Content\assets\plugins\jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="Content\assets\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="Content\assets\plugins\themify-icons\fonts\themify.svg" />
+    <Content Include="Content\assets\plugins\themify-icons\themify-icons.css" />
+    <Content Include="Content\assets\styles\bootstrap4\bootstrap.min.css" />
+    <Content Include="Content\assets\styles\bootstrap4\bootstrap.min.js" />
+    <Content Include="Content\assets\styles\bootstrap4\popper.js" />
+    <Content Include="Content\assets\styles\categories_responsive.css" />
+    <Content Include="Content\assets\styles\categories_styles.css" />
+    <Content Include="Content\assets\styles\contact_responsive.css" />
+    <Content Include="Content\assets\styles\contact_styles.css" />
+    <Content Include="Content\assets\styles\main_styles.css" />
+    <Content Include="Content\assets\styles\responsive.css" />
+    <Content Include="Content\assets\styles\single_responsive.css" />
+    <Content Include="Content\assets\styles\single_styles.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -3034,10 +3146,64 @@
     <Content Include="Content\clients\plugins\uplot\uPlot.iife.js" />
     <Content Include="Content\clients\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Content\clients\plugins\uplot\uPlot.min.css" />
+    <Content Include="Content\assets\dist\css\adminlte.css" />
+    <Content Include="Content\assets\dist\css\adminlte.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="Content\assets\dist\img\AdminLTELogo.png" />
+    <Content Include="Content\assets\dist\img\avatar.png" />
+    <Content Include="Content\assets\dist\img\avatar2.png" />
+    <Content Include="Content\assets\dist\img\avatar3.png" />
+    <Content Include="Content\assets\dist\img\avatar4.png" />
+    <Content Include="Content\assets\dist\img\avatar5.png" />
+    <Content Include="Content\assets\dist\img\boxed-bg.jpg" />
+    <Content Include="Content\assets\dist\img\boxed-bg.png" />
+    <Content Include="Content\assets\dist\img\credit\american-express.png" />
+    <Content Include="Content\assets\dist\img\credit\cirrus.png" />
+    <Content Include="Content\assets\dist\img\credit\mastercard.png" />
+    <Content Include="Content\assets\dist\img\credit\paypal.png" />
+    <Content Include="Content\assets\dist\img\credit\paypal2.png" />
+    <Content Include="Content\assets\dist\img\credit\visa.png" />
+    <Content Include="Content\assets\dist\img\default-150x150.png" />
+    <Content Include="Content\assets\dist\img\icons.png" />
+    <Content Include="Content\assets\dist\img\photo1.png" />
+    <Content Include="Content\assets\dist\img\photo2.png" />
+    <Content Include="Content\assets\dist\img\photo3.jpg" />
+    <Content Include="Content\assets\dist\img\photo4.jpg" />
+    <Content Include="Content\assets\dist\img\prod-1.jpg" />
+    <Content Include="Content\assets\dist\img\prod-2.jpg" />
+    <Content Include="Content\assets\dist\img\prod-3.jpg" />
+    <Content Include="Content\assets\dist\img\prod-4.jpg" />
+    <Content Include="Content\assets\dist\img\prod-5.jpg" />
+    <Content Include="Content\assets\dist\img\user1-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\assets\dist\img\user3-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user4-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user5-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user6-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user7-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\assets\dist\js\adminlte.js" />
+    <Content Include="Content\assets\dist\js\adminlte.min.js" />
+    <Content Include="Content\assets\dist\js\demo.js" />
+    <Content Include="Content\assets\dist\js\pages\dashboard.js" />
+    <Content Include="Content\assets\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\assets\dist\js\pages\dashboard3.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\autoNumeric-1.9.45.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -3147,17 +3313,97 @@
     <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutEmpty.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\assets\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\assets\plugins\themify-icons\fonts\themify.eot" />
+    <Content Include="Content\assets\plugins\themify-icons\fonts\themify.ttf" />
+    <Content Include="Content\assets\plugins\themify-icons\fonts\themify.woff" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\View.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Partial_SanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Content\assets\dist\css\adminlte.css.map" />
+    <Content Include="Content\assets\dist\css\adminlte.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="Content\assets\dist\js\.eslintrc.json" />
+    <Content Include="Content\assets\dist\js\adminlte.js.map" />
+    <Content Include="Content\assets\dist\js\adminlte.min.js.map" />
+    <Content Include="Areas\Admin\Views\Account\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SettingSystem\Partial_Setting.cshtml" />
+    <Content Include="Areas\Admin\Views\SettingSystem\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsShopping.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Uploads\images\Screenshot %281%29.png" />
+    <Content Include="Uploads\images\Screenshot 2024-03-29 184649.png" />
+    <Content Include="Uploads\_thumbs\Images\Screenshot %281%29.png" />
+    <Content Include="Uploads\_thumbs\Images\Screenshot 2024-03-29 184649.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3192,11 +3438,34 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Menu\_MenuTop.cshtml" />
+    <Content Include="Views\Menu\_MenuProductCategory.cshtml" />
+    <Content Include="Views\Menu\_MenuArrivals.cshtml" />
+    <Content Include="Views\Products\Partial_ItemsByCateId.cshtml" />
+    <Content Include="Views\Products\Partial_ProductSales.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Menu\_MenuLeft.cshtml" />
+    <Content Include="Views\Products\ProductCategory.cshtml" />
+    <Content Include="Views\Products\Detail.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Partial_Item_Cart.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
+    <Content Include="Views\ShoppingCart\Partial_Item_ThanhToan.cshtml" />
+    <Content Include="Views\ShoppingCart\Partial_CheckOut.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOutSuccess.cshtml" />
+    <Content Include="Views\News\Partial_News_Home.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\Home\Partial_Subcrice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Content\ckfinder\userfiles\" />
+    <Folder Include="Data\" />
+    <Folder Include="Uploads\files\" />
+    <Folder Include="Uploads\flash\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -3240,6 +3509,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403301200002_ImpactModels.resx">
       <DependentUpon>202403301200002_ImpactModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404010532265_UpdateProductCategory.resx">
+      <DependentUpon>202404010532265_UpdateProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404060807442_Update1206.resx">
+      <DependentUpon>202404060807442_Update1206.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404060825177_Update12061.resx">
+      <DependentUpon>202404060825177_Update12061.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404100358493_Update12062.resx">
+      <DependentUpon>202404100358493_Update12062.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404140450134_UpdatePayment.resx">
+      <DependentUpon>202404140450134_UpdatePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404150726120_UpdateKey12.resx">
+      <DependentUpon>202404150726120_UpdateKey12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404190715522_UpdateNews.resx">
+      <DependentUpon>202404190715522_UpdateNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404191709456_UpdateSubcribe.resx">
+      <DependentUpon>202404191709456_UpdateSubcribe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

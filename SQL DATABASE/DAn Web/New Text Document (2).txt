@@ -1,0 +1,2 @@
+phút 33 tạo migration UpdateProductCategory
+phút 38 lỗi 
